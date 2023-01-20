@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "orta.vscode-jest",
+        "idered.npm",
+        "planbcoding.vscode-react-refactor"
+    ]
+}

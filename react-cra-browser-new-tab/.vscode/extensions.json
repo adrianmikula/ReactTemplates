@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "orta.vscode-jest",
+        "idered.npm",
+        "planbcoding.vscode-react-refactor",
+        "jawandarajbir.react-vscode-extension-pack",
+        "github.copilot",
+        "rodrigovallades.es7-react-js-snippets",
+        "burkeholland.simple-react-snippets"
+    ]
+}

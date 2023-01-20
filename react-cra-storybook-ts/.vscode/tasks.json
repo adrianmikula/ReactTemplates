@@ -1,0 +1,102 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Debug: Web",
+      "type": "npm",
+      "script": "start:web",
+      "presentation": {
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Stop Debug",
+      "type": "npm",
+      "script": "stop",
+      "presentation": {
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "command": "nvm use v16.16.0",
+      "label": "Switch Node.JS Version",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    // {
+    //   "label": "Install/Update NPM",
+    //   "type": "npm",
+    //   "script": "ci",
+    //   "presentation": {
+    //     "clear": true,
+    //     "panel": "shared",
+    //     "showReuseMessage": false
+    //   },
+    //   "problemMatcher": [],
+    //   "dependsOn":["Switch Node.JS Version"]
+    // },
+    {
+      "type": "shell",
+      "command": "npm ci",
+      "label": "Install/Update NPM",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "."
+      },
+      "dependsOn":["Switch Node.JS Version"]
+    },
+    {
+      "type": "shell",
+      "command": "npx office-addin-dev-certs verify",
+      "label": "Verify Dev Certificates",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "dependsOn":["Install/Update NPM"]
+    },
+    {
+      "type": "shell",
+      "command": "npx npm-check --specials=bin,babel,eslint,jest,webpack",
+      "label": "Run NPM Dependency Check",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "dependsOn":["Verify Dev Certificates"]
+    },
+    {
+      "label": "Run NPM Security Audit",
+      "type": "npm",
+      "script": "audit",
+      "presentation": {
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": [],
+      "dependsOn":["Run NPM Dependency Check"]
+    },
+  ]
+}
