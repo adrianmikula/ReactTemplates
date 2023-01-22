@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Run Express.JS Backend",
+        "runtimeExecutable": "nodemon",
+        "program": "./index.js",
+        "cwd": "${workspaceFolder}/express-backend",
+        "restart": true,
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+    },
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Run React.JS Frontend",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "runtimeExecutable": "npm",
+        "cwd": "${workspaceFolder}/react-frontend",
+        "runtimeArgs": [
+          "run-script",
+          "start"
+        ],
+        "windows": {
+          "runtimeExecutable": "npm.cmd"
+        }
+      }
+    ]
+}
