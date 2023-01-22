@@ -21,9 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook"
   },
@@ -47,7 +47,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@craco/craco": "^7.0.0",
+    "@craco/types": "^7.0.0",
     "@storybook/react": "^6.5.15",
-    "babel-loader": "^9.1.2"
+    "babel-loader": "^9.1.2",
+    "circular-dependency-plugin": "^5.2.2",
+    "customize-cra-react-refresh": "^1.1.0",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-node-externals": "^3.0.0"
   }
 }

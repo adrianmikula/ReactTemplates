@@ -1,3 +1,8 @@
+# DO NEXT
+- Set up CRACO - https://github.com/dilanx/craco
+- Set up hot reloading
+- Set up performance monitoring
+
 # IMMEDIATE GOALS
 - Apply test driven development (using storybooks and mocks)
 - Use latest react features such as hooks and functions
